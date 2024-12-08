@@ -15,13 +15,9 @@ limitations under the License.
 */
 #pragma once
 /* for random number generation */
-#define RANDOM_GEN_BIT_WIDTH 20
-typedef bit<RANDOM_GEN_BIT_WIDTH> random_gen_bitwidth_t;
-
 
 typedef bit<48> mac_addr_t;
 typedef bit<32> ipv4_addr_t;
-typedef bit<32> timestamp_t;
 typedef bit<8> hash_t;
 
 
@@ -191,9 +187,6 @@ struct header_t {
 struct metadata_t {
     /* switch's ID for our virtual topology */
     port_metadata_t port_md;    // 8
-    timestamp_t current_time;  // 32
-    // timestamp_t time_gap;   // 32
-    hash_t hash_val;   // 16
     bit<2> port_index;
     bit<1> valid;
     ig_mirror1_h ig_mirror1;

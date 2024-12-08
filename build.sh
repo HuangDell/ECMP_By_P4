@@ -1,7 +1,7 @@
 #!/bin/bash
 # 定义变量
-P4_NAME="let_it_flow"
-SRC_NAME="flowlet"
+P4_NAME="ecmp"
+SRC_NAME="ecmp"
 
 P4FILE_PATH="$(pwd)/src/${SRC_NAME}.p4"
 BUILD_DIR="build"
