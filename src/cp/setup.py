@@ -71,8 +71,14 @@ def add_l2_forward(forward_configs):
     def generate_random_port_forward(dst_addr,port_begin,port_end):
         for i in range(port_begin,port_end+1):
             l2_forward.add_with_forward(dst_addr=dst_addr,port_index=i-port_begin,port=i)
+    def generate_exact_port_forward(dst_addr,exact_port):
+        for i in range(4):
+            l2_forward.add_with_forward(dst_addr=dst_addr,port_index=i,port=exact_port)
     
     for config in forward_configs:
+        if config[1]==config[2]:     # exact l2 forward
+            generate_exact_port_forward(config[0],config[1])
+        else:
             generate_random_port_forward(*config)
 
     
